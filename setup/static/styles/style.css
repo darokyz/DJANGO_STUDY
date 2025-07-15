@@ -33,7 +33,7 @@ body {
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(#041833,#04244F,#154580);
+    background: linear-gradient(#3c3a57,#130e16,#875c92);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -94,7 +94,7 @@ table {
 
 .busca__fundo {
     align-items: center;
-    background-color: #041A37;
+    background-color: #78808b;
     border-radius: 8px;
     display: flex;
     margin: 0 auto;
@@ -241,7 +241,18 @@ table {
 }
 
 .imagem__descricao {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 1em auto;
+    padding: 1em 1.5em;
+    background-color: rgb(33, 33, 56);
+    border-left: 5px solid #9898a3;      
+    border-radius: 8px;
+    color: #ddd9d9;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 9px rgba(119, 77, 187, 0.1);
+    white-space: pre-line;
 }
 
 .menu-lateral {
