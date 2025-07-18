@@ -33,7 +33,7 @@ body {
     line-height: 1;
     font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(155deg,rgb(206, 185, 233), #130b1f,#3e2e47,#684770);
+    background: linear-gradient(155deg,#130b1f, #130b1f,#3e2e47,#684770);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -86,20 +86,21 @@ table {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 1.5rem 0 4rem 0;
+    margin: 1.5rem 10 4rem 10;
 }
 
 .cabecalho__busca {
-    transform: translateX(-10px);
     margin-top: -2px;
-    align-items: center;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #C98CF1,#7B78E5);
+    margin-left: auto; 
     display: flex;
-    height: auto;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #C98CF1, #7B78E5);
     padding: 1.2px;
-    width: auto; 
+    max-width: 500px;
+    width: 100%;
+
 }
 
 .busca__fundo {
@@ -108,7 +109,8 @@ table {
     border-radius: 8px;
     display: flex;
     margin: 0 auto;
-    width: 99%;
+    width: 97%;
+    
 }
 
 .busca__input {
@@ -119,12 +121,16 @@ table {
     height: 24px;
     padding: 10px;
     width: 500px;
+    
 }
 
 .busca__icone {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
+    object-fit: contain;
+    margin-top: -2px;
+
 }
 
 .cards {
@@ -272,13 +278,18 @@ table {
 }
 
 .menu-lateral__navegacao {
+    width: 270px;
+    min-height: 270px;
+    border-radius: 8px;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
+    background-color: #473364;
 }
 
 .menu-lateral__navegacao a {
     font-family: 'Space Grotesk', sans-serif;
-    align-items: center;
+    align-items: end;
     display: flex;
     margin-bottom: 1.5rem;
     text-decoration: none;
@@ -292,12 +303,13 @@ table {
 }
 
 .menu-lateral__navegacao img {
-    margin-right: 1.5rem;
+    margin-right: 1.2rem;
+    margin-top: 1rem;
 }
 
 .pagina-inicial {
     max-width: 1440px;
-    padding: 1.5rem;
+    padding: 0.7rem;
     margin: 0 auto;
 }
 
@@ -371,6 +383,7 @@ table {
 
 .rodape__texto {
     font-size: 1.1rem;
+    margin-top: 1.5rem;
 }
 
 .tags {

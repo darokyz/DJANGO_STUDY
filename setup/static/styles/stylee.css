@@ -1,0 +1,523 @@
+Claro\! Vamos transformar completamente a estética do seu código, trocando a vibe *dark mode* por um design *light mode* moderno, arejado e sofisticado.
+
+Mantive todas as suas classes, mas reconstruí o visual com uma nova paleta de cores claras, tipografia refinada, sombras sutis e um layout mais limpo. O objetivo foi criar uma interface que pareça profissional, leve e "incrível", como você pediu.
+
+### A Nova Proposta de Design
+
+  * **Paleta de Cores:** Substituímos o roxo escuro por um fundo branco/off-white. Os detalhes agora usam um azul vibrante como cor primária e um rosa suave como secundário, criando um contraste elegante e moderno.
+  * **Sombras e Profundidade:** Em vez do efeito de vidro, agora usamos sombras muito suaves e em camadas (`box-shadow`) para fazer os elementos "flutuarem" sobre a página. Isso cria uma sensação de profundidade e organização.
+  * **Espaçamento e Tipografia:** Aumentei o "respiro" entre os elementos e ajustei os tamanhos de fonte para melhorar a legibilidade e dar uma aparência mais limpa e minimalista.
+  * **Interatividade:** Os efeitos de `hover` (passar o mouse) foram refinados para serem mais sutis e elegantes, geralmente com uma leve animação de transformação e mudança na sombra.
+
+Aqui está o código CSS totalmente repaginado:
+
+```css
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --- ESTILOS MODERNOS (LIGHT MODE) --- */
+
+:root {
+    --color-primary: #007BFF; /* Azul vibrante */
+    --color-secondary: #E91E63; /* Rosa/Magenta como destaque */
+    --color-text-primary: #212529; /* Preto suave para texto */
+    --color-text-secondary: #6c757d; /* Cinza para texto de apoio */
+
+    --bg-main: #F8F9FA; /* Fundo principal (quase branco) */
+    --bg-surface: #FFFFFF; /* Fundo de elementos como cards */
+    --color-border: #DEE2E6; /* Cor de borda sutil */
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    /* Sombras suaves para um efeito "flutuante" */
+    --shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition-fast: all 0.25s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- BANNER --- */
+.banner {
+    width: 100%;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 2%;
+}
+
+.banner__imagem {
+    display: block;
+    width: 100%;
+    height: 400px; /* Altura fixa para um visual mais controlado */
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-medium);
+}
+
+.banner__titulo {
+    font-family: 'Quantico', sans-serif;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: var(--bg-surface);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+
+/* --- CABEÇALHO E BUSCA --- */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0 3rem 0;
+    gap: 1rem;
+}
+
+.cabecalho__busca {
+    display: flex;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    transition: var(--transition-fast);
+}
+
+.cabecalho__busca:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.busca__fundo {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+}
+
+.busca__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    color: var(--color-text-primary);
+}
+
+.busca__input::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.busca__icone {
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- CARDS --- */
+.cards__titulo {
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.cards__lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    color: var(--color-text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+.card__imagem {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.card__tag {
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.card__info {
+    font-size: 1rem;
+    padding: 1.5rem;
+}
+
+.card__titulo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card__texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.card__texto img {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.card__texto img:hover {
+    opacity: 1;
+}
+
+.card__descricao {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* --- LAYOUTS E MENU --- */
+.pagina-inicial {
+    max-width: 1440px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.principal {
+    display: flex;
+    gap: 2rem;
+}
+
+.principal > :first-child {
+    flex: 1;
+}
+
+.menu-lateral,
+.populares {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    align-self: flex-start; /* Para não esticar */
+    min-width: 270px;
+    box-shadow: var(--shadow-soft);
+}
+
+.menu-lateral__navegacao a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.menu-lateral__navegacao a:hover {
+    background-color: #eef1f4;
+    color: var(--color-text-primary);
+}
+
+.menu-lateral__navegacao a.ativo,
+.menu-lateral__navegacao a:first-child {
+    font-weight: bold;
+    color: var(--color-primary);
+    background-color: rgba(0, 123, 255, 0.08);
+}
+
+.populares__titulo {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.populares__imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.populares__imagem {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.populares__imagem:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-medium);
+}
+
+.populares__botao,
+.populares__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin-top: 1.5rem;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.populares__botao:hover,
+.populares__link:hover {
+    background-color: #0056b3; /* Um tom mais escuro de azul */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- RODAPÉ --- */
+.rodape {
+    background-color: var(--bg-surface);
+    width: 100%;
+    padding: 2rem 3rem;
+    margin-top: 3rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.rodape__icones {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.rodape__icones a {
+    transition: var(--transition-fast);
+}
+
+.rodape__icones a:hover {
+    transform: translateY(-3px);
+}
+
+.rodape__texto {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- TAGS --- */
+.tags {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+}
+
+.tags__titulo {
+    color: var(--color-text-primary);
+    font-weight: bold;
+}
+
+.tags__lista {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tags__tag {
+    background-color: #e9ecef;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    margin-right: 0;
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.tags__tag:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--bg-surface);
+}
